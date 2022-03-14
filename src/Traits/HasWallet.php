@@ -3,7 +3,6 @@
 namespace Flexsy\Player\Traits;
 
 use App\PlayerWallet;
-use function tenancy;
 
 trait HasWallet
 {
