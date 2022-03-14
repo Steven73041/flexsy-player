@@ -12,8 +12,8 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Flexsy\\": "src/",
-            "Flexsy\\Traits\\": "src/Traits"
+            "Flexsy\\Player\\": "src",
+            "Flexsy\\Player\\Traits\\": "src/traits"
         }
     },
     "require": {}
