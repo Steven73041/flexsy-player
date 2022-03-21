@@ -6,11 +6,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Player extends Authenticatable
 {
-    protected $guard_name = 'skinUsers';
+    public $table = 'skin_users';
 
     public $timestamps = false;
-
-    public $table = 'skin_users';
 
     protected $fillable = [
         'id',
