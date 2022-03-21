@@ -84,7 +84,7 @@ class Wallet extends \Illuminate\Database\Eloquent\Model
      *
      * @return float|mixed
      */
-    public function getTotalBalance(array $columns = [])
+    public function getTotal(array $columns = [])
     {
         if (! empty($columns)) {
             $total = 0;
