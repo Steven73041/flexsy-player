@@ -45,4 +45,56 @@ class Wallet extends \Illuminate\Database\Eloquent\Model
     {
         return Currency::getAllCached()->where('shortcode', $this->currency_code)->first();
     }
+
+    /**
+     * @param string $column
+     * @param $amount
+     *
+     * @return $this
+     */
+    public function add(string $column, $amount) {
+        $this->update([$column => $this->{$column} + $amount]);
+        return $this;
+    }
+
+    /**
+     * @param string $column
+     * @param $amount
+     *
+     * @return $this
+     */
+    public function sub(string $column, $amount) {
+        $this->update([$column => $this->{$column} - $amount]);
+        return $this;
+    }
+
+    /**
+     * @param string $column
+     * @param $amount
+     *
+     * @return $this
+     */
+    public function set(string $column, $amount) {
+        $this->update([$column => $amount]);
+        return $this;
+    }
+
+    /**
+     * @param array $columns
+     *
+     * @return float|mixed
+     */
+    public function getTotalBalance(array $columns = [])
+    {
+        if (! empty($columns)) {
+            $total = 0;
+            foreach ($columns as $column) {
+                $total += $this->{$column};
+            }
+
+            return (float) $total;
+        }
+
+        return $this->cash + $this->bonus + $this->casino_bonus + $this->sports_bonus;
+    }
 }
