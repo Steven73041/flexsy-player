@@ -1,6 +1,6 @@
 {
-    "name": "flexsy/player",
-    "description": "Player model",
+    "name": "wallet/models",
+    "description": "Wallet models",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Services\\Balance\\": "src"
+            "Wallet\\Models\\": "src"
         }
     },
     "require": {}
